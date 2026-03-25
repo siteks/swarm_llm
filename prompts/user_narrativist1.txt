@@ -1,0 +1,8 @@
+Here are the memory event logs of a simulation run:
+
+---
+[DATA]
+[/DATA]
+---
+
+Please analyse this text.

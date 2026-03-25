@@ -1,0 +1,19 @@
+# Swarm LLM dependencies
+litellm==1.80.0
+python-dotenv>=1.0.0
+
+# For swarm_viewer.py interactive TUI
+textual>=0.40.0
+
+# For summarize_corrupt_reconstruct.py script
+voyageai>=0.3.0
+scipy>=1.10.0
+numpy>=1.24.0
+
+# For network_analysis.py script
+networkx>=3.0
+
+# For text_analysis.py vocabulary extraction
+tiktoken>=0.5.0
+transformers>=4.30.0
+wordfreq>=3.0

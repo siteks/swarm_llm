@@ -1,0 +1,88 @@
+# Swarm LLM Configuration
+# Copy this file to .env and fill in your API keys
+
+# =============================================================================
+# LLM Provider API Keys (at least one required)
+# =============================================================================
+
+# Anthropic (Claude models)
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+
+# OpenAI (GPT models)
+# OPENAI_API_KEY=your_openai_api_key_here
+
+# Google (Gemini models)
+# GOOGLE_API_KEY=your_google_api_key_here
+
+# Moonshot API key (Kimi)
+# MOONSHOT_API_KEY=your_moonshot_api_key_here
+
+# DeepSeek
+# DEEPSEEK_API_KEY=your_deepseek_api_key_here
+
+# =============================================================================
+# LLM Settings
+# =============================================================================
+
+# Default model when no model specified in agent spec (default: claude-sonnet-4-5-20250929)
+LLM_MODEL=claude-sonnet-4-5-20250929
+
+# Maximum tokens per completion (default: 4096)
+LLM_MAX_TOKENS=4096
+
+# =============================================================================
+# Model Nicknames (for multi-model runs)
+# =============================================================================
+# Define short nicknames for models to use with -a flag:
+#   python run_swarm.py -a claude:minimal gemini:minimal
+#
+# Format: MODEL_<NICKNAME>=<full-model-id>
+
+
+MODEL_CLAUDE=claude-sonnet-4-5-20250929
+MODEL_GPRO=gemini/gemini-3-pro-preview
+MODEL_GEMINI=gemini/gemini-3-flash-preview
+MODEL_KIMI=moonshot/kimi-k2-thinking-turbo
+#MODEL_DEEPSEEK=deepseek-reasoner
+
+# =============================================================================
+# Swarm Settings
+# =============================================================================
+
+# Maximum number of cycles to run (default: 50)
+SWARM_MAX_CYCLES=50
+
+# Maximum concurrent agent LLM calls (default: 10)
+SWARM_MAX_CONCURRENT=10
+
+# Maximum tool iterations per agent turn (default: 10)
+SWARM_MAX_TOOL_ITERATIONS=50
+
+# Character budget per agent turn (limits send_message, write_storage, append_storage)
+# Set to empty or remove to disable budget limit
+SWARM_CHAR_BUDGET=5000
+
+# =============================================================================
+# Storage Entropy (Sigmoid Decay)
+# =============================================================================
+# Entropy causes stored text to gradually decay over time, encouraging
+# agents to refresh and maintain important information.
+
+# Enable/disable storage entropy (default: true)
+SWARM_ENTROPY_ENABLED=true
+
+# Cycles before decay accelerates (sigmoid inflection point, default: 15)
+# Lower values = faster decay, higher values = more cycles before decay starts
+SWARM_ENTROPY_TIPPING_POINT=10
+
+# Decay curve sharpness (default: 0.5)
+# Higher values = sharper transition from low to high decay
+# Lower values = more gradual decay curve
+SWARM_ENTROPY_STEEPNESS=0.5
+
+# =============================================================================
+# Output Settings
+# =============================================================================
+
+# Output directory for logs and telemetry (default: /app/output in container)
+# SWARM_OUTPUT_DIR=/app/output
